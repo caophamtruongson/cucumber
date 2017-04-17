@@ -1,6 +1,7 @@
 #ifndef GHERKIN_UNICODE_UTILITIES_H_
 #define GHERKIN_UNICODE_UTILITIES_H_
 
+#include <stdio.h>
 #include <wchar.h>
 
 #include "utf8_source.h"
@@ -17,6 +18,8 @@ typedef struct Utf16Surrogates {
 long UnicodeUtilities_read_code_point_from_utf8_source(Utf8Source* utf8_source);
 
 Utf16Surrogates UnicodeUtilities_get_utf16_surrogates(long code_point);
+
+int UnicodeUtilities_print_wide_character_to_utf8_file(FILE* file, const wchar_t* text, int pos);
 
 #ifdef __cplusplus
 }
